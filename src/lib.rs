@@ -8,18 +8,17 @@ pub struct PantryClient {
     pantry_id: String,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GetPantryResponse {
     name: String,
     description: String,
-    // errors: Vec<Box<dyn std::any::Any>>,
     notifications: bool,
     percent_full: i64,
     baskets: Vec<Basket>,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize)]
 struct Basket {
     name: String,
     ttl: i32,
